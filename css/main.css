@@ -176,11 +176,27 @@ header .container {
 
 /* hero start */
 .hero {
-  background-image: url(../img/hero-bg.svg);
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(241, 248, 255, 1) 100%
+  );
   text-align: center;
   padding: 2rem 0;
   min-height: calc(100vh - 80px);
   position: relative;
+  overflow: hidden;
+}
+.hero::after {
+  position: absolute;
+  content: "";
+  width: 200vw;
+  height: 20%;
+  left: -50px;
+  bottom: -45px;
+  transform: rotate(-3deg);
+  background-color: #fff;
 }
 
 .hero .section-head a {
@@ -218,6 +234,17 @@ header .container {
   max-width: 25ch;
   margin-left: auto;
   margin-right: auto;
+}
+
+/* Product Team */
+.product-team .container,
+.eng-team .container {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 3rem;
 }
 
 @media (min-width: 768px) {
@@ -288,6 +315,24 @@ header .container {
   }
   .insights .card-desc {
     margin-left: 0;
+  }
+  .product-team .container {
+    flex-direction: row-reverse;
+  }
+  .product-team .container,
+  .eng-team .container {
+    text-align: start;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+  }
+  .product-team .container .section-head,
+  .eng-team .container .section-head {
+    margin: 0 0 2rem 0;
+  }
+  .eng-team .container {
+    flex-direction: row;
   }
 }
 @media (min-width: 1200px) {
