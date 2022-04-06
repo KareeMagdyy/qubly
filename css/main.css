@@ -21,7 +21,7 @@
   --clr-primary-100: #f9f0ff;
   --clr-primary-400: #722ed1;
   --clr-text-700: #160637;
-  --cle-text-light: #8989a2;
+  --clr-text-light: #8989a2;
   --clr-white: #fff;
 }
 /* Global Selectors */
@@ -29,6 +29,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -37,11 +38,21 @@ body {
   position: relative;
 }
 
+section {
+  margin-top: 5rem;
+}
+
 .container {
   padding-left: 3rem;
   padding-right: 3rem;
   margin-left: auto;
   margin-right: auto;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--clr-text-700);
 }
 
 a {
@@ -72,6 +83,26 @@ img {
 
 .btn + .btn {
   margin-top: 1rem;
+}
+
+.section-head {
+  font-size: 1rem;
+  color: var(--clr-primary-400);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background-color: var(--clr-primary-100);
+  border-radius: 2rem;
+  padding: 0.5rem;
+  margin: 0 auto 2rem auto;
+}
+.section-desc {
+  margin: 2rem auto 1rem auto;
+  color: var(--clr-text-light);
+  font-weight: 500;
+  line-height: 1.6;
+  max-width: 45ch;
 }
 
 /* header Start */
@@ -145,7 +176,6 @@ header .container {
 
 /* hero start */
 .hero {
-  margin-top: 5rem;
   background-image: url(../img/hero-bg.svg);
   text-align: center;
   padding: 2rem 0;
@@ -153,40 +183,41 @@ header .container {
   position: relative;
 }
 
-.hero .release {
-  font-size: 1rem;
-  color: var(--clr-primary-400);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  background-color: var(--clr-primary-100);
-  /* width: fit-content; */
-  border-radius: 2rem;
-  padding: 0.5rem;
-}
-
-.hero .release a {
+.hero .section-head a {
   text-decoration: underline;
+  font-size: inherit;
 }
 
 .hero h1 {
   margin-top: 2rem;
-  color: var(--clr-text-700);
   font-weight: 700;
   font-size: 2.25rem;
   line-height: 1.4;
 }
-.hero-desc {
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-  color: var(--cle-text-light);
-  font-weight: 500;
-  line-height: 1.6;
-}
 
 .hero-right {
   display: none;
+}
+
+/* About Start */
+.about {
+  text-align: center;
+}
+
+.about h2 {
+  font-size: 1.75rem;
+}
+.insights {
+  margin-top: 5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+.about h2,
+.insights .card-desc {
+  max-width: 25ch;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media (min-width: 768px) {
@@ -197,6 +228,19 @@ header .container {
 @media (min-width: 992px) {
   .container {
     max-width: 960px;
+  }
+  .section-head {
+    width: fit-content;
+    padding: 0 2rem;
+  }
+  .btn {
+    display: inline-block;
+    margin-top: 2rem;
+  }
+
+  .btn + .btn {
+    margin-top: 0;
+    margin-left: 1rem;
   }
   .nav-icon,
   .close-nav {
@@ -217,6 +261,7 @@ header .container {
     justify-content: center;
     gap: 3rem;
   }
+
   .hero h2 {
     font-size: 3rem;
     line-height: 64px;
@@ -226,11 +271,7 @@ header .container {
     text-align: start;
     width: 50%;
   }
-  .hero-left .release {
-    justify-content: flex-start;
-    width: fit-content;
-    padding: 0 2rem;
-  }
+
   .hero-right {
     display: block;
     width: 50%;
@@ -238,14 +279,15 @@ header .container {
   .hero-right img {
     margin: auto;
   }
-  .btn {
-    display: inline-block;
-    margin-top: 2rem;
-  }
 
-  .btn + .btn {
-    margin-top: 0;
-    margin-left: 1rem;
+  .about h2 {
+    font-size: 2.25rem;
+  }
+  .card {
+    text-align: start;
+  }
+  .insights .card-desc {
+    margin-left: 0;
   }
 }
 @media (min-width: 1200px) {
