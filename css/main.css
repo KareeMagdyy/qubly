@@ -194,8 +194,8 @@ header .container {
   width: 200vw;
   height: 20%;
   left: -50px;
-  bottom: -45px;
-  transform: rotate(-3deg);
+  bottom: -20px;
+  transform: rotate(-4deg);
   background-color: #fff;
 }
 
@@ -245,6 +245,52 @@ header .container {
   justify-content: space-between;
   flex-direction: column;
   gap: 3rem;
+}
+/* Testimonials  */
+.testimonials {
+  background: rgb(252, 247, 255);
+  background: linear-gradient(
+    180deg,
+    rgba(252, 247, 255, 1) 0%,
+    rgba(244, 249, 255, 1) 100%
+  );
+  padding: 12rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.testimonials::before,
+.testimonials:after {
+  position: absolute;
+  content: "";
+  width: 200%;
+  height: 20%;
+  left: -50%;
+  background-color: #fff;
+}
+.testimonials::before {
+  top: -60px;
+  transform: rotate(-3deg);
+}
+.testimonials::after {
+  bottom: -60px;
+  transform: rotate(-3deg);
+}
+.testimonials .container > p {
+  max-width: 45ch;
+  margin: 0 auto 2rem auto;
+  font-size: 1.3125rem;
+}
+.testimonials .profile p {
+  font-weight: 700;
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+.testimonials .profile p + p {
+  margin-top: 0.5rem;
+}
+.testimonials img {
+  margin: 3rem auto 1rem auto;
 }
 
 @media (min-width: 768px) {
