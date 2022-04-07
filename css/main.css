@@ -269,6 +269,9 @@ header .container {
   flex-direction: column;
   gap: 3rem;
 }
+.eng-team .right {
+  animation: slide-up 2s ease-in infinite alternate-reverse both;
+}
 /* Testimonials  */
 .testimonials {
   background: rgb(252, 247, 255);
@@ -555,6 +558,7 @@ footer .container .col:nth-child(1) p {
   .hero-right {
     display: block;
     width: 50%;
+    animation: slide-up 2s ease-in infinite alternate-reverse both;
   }
   .hero-right img {
     margin: auto;
@@ -608,5 +612,14 @@ footer .container .col:nth-child(1) p {
 @media (min-width: 1400px) {
   .container {
     max-width: 1320px;
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-15px);
   }
 }
