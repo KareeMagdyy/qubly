@@ -41,8 +41,7 @@ main {
   position: relative;
 }
 
-section,
-footer {
+section {
   margin-top: 5rem;
 }
 
@@ -370,7 +369,7 @@ header .container {
   margin-left: -1rem;
 }
 
-form {
+.sign form {
   margin-left: auto;
   margin-right: auto;
   position: relative;
@@ -379,12 +378,12 @@ form {
   padding: 2rem;
   background-color: #fff;
 }
-form::before {
+.sign form::before {
   position: absolute;
   height: 100%;
   width: 120%;
   content: "";
-  background-color: #f9f0ff;
+  background-color: var(--clr-primary-100);
   z-index: -1;
   top: 10%;
   left: -10%;
@@ -404,7 +403,7 @@ form h2 {
   border-radius: 0.25rem;
   outline-color: var(--clr-primary-400);
 }
-.sign input::placeholder {
+input::placeholder {
   font-family: inherit;
   color: var(--clr-text-light);
 }
@@ -413,9 +412,14 @@ form button {
   border: none;
   background-color: transparent;
   cursor: pointer;
+  transition: 350ms;
 }
 
-form button:not(.ggl) {
+form button:hover {
+  opacity: 0.8;
+}
+
+.sign form button:not(.ggl) {
   background-color: var(--clr-primary-400);
   color: var(--clr-white);
   height: 48px;
@@ -428,9 +432,77 @@ form p {
   margin-bottom: 20px;
 }
 
+/* Footer */
+footer {
+  margin-top: 10rem;
+  padding-top: 3rem;
+  padding-bottom: 1rem;
+  background-color: var(--clr-primary-100);
+}
+footer .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(125px, 1fr));
+  gap: 3rem;
+}
+
+footer .container .col:nth-child(1) p {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  line-height: 1.25rem;
+  font-size: 0.75rem;
+}
+
+.footer-social svg + svg {
+  margin-left: 1rem;
+}
+
+.col a {
+  display: block;
+  width: fit-content;
+}
+.col form {
+  position: relative;
+  width: 150px;
+}
+
+.col form input {
+  margin: 0;
+  border: none;
+  display: inline;
+  height: 32px;
+  padding: 1rem;
+  width: 100%;
+  font-weight: 500;
+}
+
+.col form button {
+  position: absolute;
+  top: 0;
+  right: 10px;
+}
+
+.copy {
+  text-align: center;
+  margin-top: 3rem;
+  color: var(--clr-text-light);
+}
+.copy a {
+  color: var(--clr-primary-400);
+  font-weight: 500;
+  transition: 350ms;
+}
+
+.copy a:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
 @media (min-width: 768px) {
   .container {
     max-width: 720px;
+  }
+  .col form {
+    width: 200px;
   }
 }
 @media (min-width: 992px) {
