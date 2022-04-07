@@ -41,7 +41,8 @@ main {
   position: relative;
 }
 
-section {
+section,
+footer {
   margin-top: 5rem;
 }
 
@@ -316,6 +317,117 @@ header .container {
   margin: 3rem auto 1rem auto;
 }
 
+/* Sign */
+
+.sign .container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.sign h3 {
+  font-size: 1.6rem;
+  line-height: 41px;
+}
+.sign .right > p {
+  position: relative;
+  overflow: hidden;
+  margin: 2rem 0;
+  color: var(--clr-text-light);
+}
+
+.sign .right > p::before,
+.sign .right > p::after {
+  position: absolute;
+  content: "";
+  width: 50%;
+  height: 1px;
+  top: 50%;
+  background-color: var(--clr-text-light);
+}
+.sign .right > p::before {
+  left: -50px;
+}
+.sign .right > p::after {
+  right: -50px;
+}
+
+.sign .trusted-icons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+.sign .icon-group {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 4rem;
+}
+.icon-group:nth-child(2) > svg:nth-child(1) {
+  margin-left: -1rem;
+}
+
+form {
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  max-width: 416px;
+  box-shadow: 0 3px 10px 2px rgb(216, 216, 216);
+  padding: 2rem;
+  background-color: #fff;
+}
+form::before {
+  position: absolute;
+  height: 100%;
+  width: 120%;
+  content: "";
+  background-color: #f9f0ff;
+  z-index: -1;
+  top: 10%;
+  left: -10%;
+}
+form h2 {
+  font-size: 1.3125rem;
+}
+.sign input {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem;
+  width: 100%;
+  height: 48px;
+  padding: 1rem;
+  border: 1px solid var(--clr-text-light);
+  border-radius: 0.25rem;
+  outline-color: var(--clr-primary-400);
+}
+.sign input::placeholder {
+  font-family: inherit;
+  color: var(--clr-text-light);
+}
+
+form button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+form button:not(.ggl) {
+  background-color: var(--clr-primary-400);
+  color: var(--clr-white);
+  height: 48px;
+  width: 100%;
+  border-radius: 0.25rem;
+}
+
+form p {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 @media (min-width: 768px) {
   .container {
     max-width: 720px;
@@ -402,6 +514,18 @@ header .container {
   }
   .eng-team .container {
     flex-direction: row;
+  }
+
+  .sign .container {
+    flex-direction: row;
+    justify-content: center;
+    gap: 7rem;
+  }
+  .sign .right {
+    width: 50%;
+  }
+  .sign .left {
+    width: 50%;
   }
 }
 @media (min-width: 1200px) {
