@@ -455,6 +455,10 @@ footer .container .col:nth-child(1) p {
   font-size: 0.75rem;
 }
 
+.footer-social svg {
+  cursor: pointer;
+}
+
 .footer-social svg + svg {
   margin-left: 1rem;
 }
@@ -462,6 +466,15 @@ footer .container .col:nth-child(1) p {
 .col a {
   display: block;
   width: fit-content;
+  transition: 250ms;
+}
+
+.col a + a {
+  margin-top: 0.5rem;
+}
+
+.col a:hover {
+  color: var(--clr-primary-400);
 }
 .col form {
   position: relative;
@@ -512,6 +525,7 @@ footer .container .col:nth-child(1) p {
   .container {
     max-width: 960px;
   }
+
   .section-head {
     width: fit-content;
     padding: 0 2rem;
@@ -584,8 +598,7 @@ footer .container .col:nth-child(1) p {
     justify-content: space-between;
     gap: 3rem;
   }
-  .product-team .container .section-head,
-  .eng-team .container .section-head {
+  .section-head:not(.about .section-head) {
     margin: 0 0 2rem 0;
   }
   .eng-team .container {
