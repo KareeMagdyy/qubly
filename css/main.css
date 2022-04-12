@@ -79,9 +79,11 @@ img {
 .btn-primary {
   background-color: var(--clr-primary-400);
   color: var(--clr-white);
+  transition: 350ms;
 }
 .btn-white {
   background-color: var(--clr-white);
+  transition: 350ms;
 }
 
 .btn + .btn {
@@ -120,7 +122,8 @@ img {
   width: 40px;
 }
 
-.to-top:hover {
+.to-top:hover,
+.to-top:focus {
   opacity: 1;
 }
 
@@ -147,7 +150,7 @@ header .container {
   text-align: center;
   font-size: 0.875rem;
   position: fixed;
-  z-index: 999;
+  z-index: 1999;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -236,6 +239,18 @@ header .container {
 
 .hero-right {
   display: none;
+}
+
+.hero .btn-primary:hover,
+.hero .btn-primary:focus {
+  background-color: var(--clr-white);
+  color: var(--clr-text-700);
+  box-shadow: inset 0 0 4px 2px var(--clr-primary-400);
+}
+
+.hero .btn-white:hover,
+.hero .btn-white:focus {
+  box-shadow: inset 0 0 4px 2px var(--clr-primary-400);
 }
 
 /* About Start */
@@ -418,7 +433,8 @@ form button {
   transition: 350ms;
 }
 
-form button:hover {
+form button:hover,
+form button:focus {
   opacity: 0.8;
 }
 
@@ -473,7 +489,8 @@ footer .container .col:nth-child(1) p {
   margin-top: 0.5rem;
 }
 
-.col a:hover {
+.col a:hover,
+.col a:focus {
   color: var(--clr-primary-400);
 }
 .col form {
@@ -489,6 +506,7 @@ footer .container .col:nth-child(1) p {
   padding: 1rem;
   width: 100%;
   font-weight: 500;
+  outline-color: var(--clr-primary-400);
 }
 
 .col form button {
